@@ -21,6 +21,8 @@ namespace Vault.Database
 
         public DbSet<AppDbEntry> Apps { get; set; }
 
+        public DbSet<PropertyDbEntry> Properties { get; set; }
+
         #endregion
     }
 }

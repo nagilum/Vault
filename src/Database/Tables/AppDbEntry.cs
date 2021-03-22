@@ -35,10 +35,11 @@ namespace Vault.Database.Tables
         /// Get the decrypted name.
         /// </summary>
         /// <param name="key">Partial key.</param>
+        /// <param name="secret">Partial key.</param>
         /// <returns>Name.</returns>
-        public string GetName(string key)
+        public string GetName(string key, string secret = null)
         {
-            return Cryptography.Symmetric.Decrypt(this.Name, $"{Config.Get("secret")}{key}");
+            return Cryptography.Symmetric.Decrypt(this.Name, $"{secret ?? Config.Get("secret")}{key}");
         }
 
         #endregion

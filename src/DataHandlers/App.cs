@@ -13,8 +13,9 @@ namespace Vault.DataHandlers
         /// Create a new app in the database.
         /// </summary>
         /// <param name="name">Name of the app.</param>
+        /// <param name="user">Requesting user.</param>
         /// <returns>App key.</returns>
-        public static async Task<HelperRegisterNewApp> CreateAsync(string name)
+        public static async Task<HelperRegisterNewApp> CreateAsync(string name, string user)
         {
             try
             {
@@ -32,6 +33,14 @@ namespace Vault.DataHandlers
 
                 await db.Apps.AddAsync(entry);
                 await db.SaveChangesAsync();
+
+                // Log the creation of the app.
+                await AccessLog.CreateAsync(
+                    db,
+                    secret,
+                    key,
+                    user,
+                    entry);
 
                 return new HelperRegisterNewApp
                 {

@@ -34,7 +34,7 @@ namespace Vault.Controllers
             }
 
             // Create new app.
-            var wrapper = await DataHandlers.App.CreateAsync(payload.Name);
+            var wrapper = await DataHandlers.App.CreateAsync(payload.Name, payload.User);
 
             if (wrapper == null)
             {
@@ -43,12 +43,6 @@ namespace Vault.Controllers
                     message = "Something went wrong while creating new app!"
                 });
             }
-
-            // Log the creation of the app.
-            await DataHandlers.AccessLog.CreateForAppAsync(
-                wrapper.Key,
-                payload.User,
-                wrapper.App);
 
             // Return to client.
             return this.Ok(new

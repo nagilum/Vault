@@ -23,6 +23,9 @@ namespace Vault.Database.Tables
         public string RequestSource { get; set; }
 
         [Column]
+        public string AccessType { get; set; }
+
+        [Column]
         public long? DataRowId { get; set; }
 
         #endregion
