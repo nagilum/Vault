@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Vault.Core;
 using Vault.Database;
 using Vault.Database.Tables;
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Vault
+namespace Vault.Core
 {
     public class Cryptography
     {
@@ -167,7 +167,7 @@ namespace Vault
                 using var cipher = new T();
 
                 var pwdBytes = new Rfc2898DeriveBytes(
-                    Encoding.UTF7.GetBytes(passphrase),
+                    Encoding.UTF8.GetBytes(passphrase),
                     Salt,
                     Iterations);
 
@@ -228,7 +228,7 @@ namespace Vault
                 using var cipher = new T();
 
                 var pwdBytes = new Rfc2898DeriveBytes(
-                    Encoding.UTF7.GetBytes(passphrase),
+                    Encoding.UTF8.GetBytes(passphrase),
                     Salt,
                     Iterations);
 

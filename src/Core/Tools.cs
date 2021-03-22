@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Vault
+namespace Vault.Core
 {
     public class Tools
     {

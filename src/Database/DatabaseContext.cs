@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Vault.Core;
 using Vault.Database.Tables;
 
 namespace Vault.Database
