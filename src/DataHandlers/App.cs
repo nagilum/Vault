@@ -50,7 +50,8 @@ namespace Vault.DataHandlers
             }
             catch (Exception ex)
             {
-                // TODO: Log to ILS
+                // Log.
+                Log.LogException(ex);
 
                 // We're giving a null-object back to indicate something went wrong!
                 return null;

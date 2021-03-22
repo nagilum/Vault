@@ -68,7 +68,7 @@ namespace Vault.DataHandlers
             }
             catch (Exception ex)
             {
-                // TODO: Log to ILS
+                Log.LogException(ex);
             }
         }
 
@@ -129,7 +129,8 @@ namespace Vault.DataHandlers
             }
             catch (Exception ex)
             {
-                // TODO: Log to ILS
+                // Log.
+                Log.LogException(ex);
 
                 // Since it's an error, we just return null.
                 return null;
@@ -202,7 +203,7 @@ namespace Vault.DataHandlers
             }
             catch (Exception ex)
             {
-                // TODO: Log to ILS
+                Log.LogException(ex);
             }
         }
 
